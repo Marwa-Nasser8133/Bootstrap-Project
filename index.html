@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/Facebook_Logo_(2019).png.webp">
+    <title>Facebook Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .small-logo {
+            width: 30px;
+            height: auto;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #050505;
+            display: block;
+            padding: 8px 0;
+        }
+
+        .sidebar a:hover,
+        .list-unstyled li:hover,
+        .story-box:hover {
+            background-color: #f0f2f5;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        .post-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-box {
+            width: 120px;
+            height: 200px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0; 
+        }
+
+        .story-container {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            position: relative;
+            scrollbar-width: none;
+        }
+
+        .story-container .d-flex {
+            overflow-x: auto;
+            scrollbar-width: none; 
+        }
+
+        .story-container button {
+            z-index: 1;
+        }
+
+        i {
+            color: rgb(41, 41, 255);
+        }
+
+        .logout-btn {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <header>
+            <div class="header d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img class="small-logo" src="./images/Facebook_Logo_(2019).png.webp" alt="Facebook_Logo">
+                    <div class="d-flex align-items-center ms-2">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control rounded-4 border-start-0 d-none d-lg-block" placeholder="Search Facebook">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-md-flex align-items-center gap-3" style="font-size: 1.5rem;">
+                    <a href="index.html"><i class="bi bi-house-fill"></i></a>
+                    <a href="#"><i class="bi bi-play-btn-fill"></i></a>
+                    <a href="#"><i class="bi bi-people-fill"></i></a>
+                    <a href="#"><i class="bi bi-dpad-fill"></i></a>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-bell-fill text-muted"></i>
+                    <i class="bi bi-chat-dots-fill text-muted"></i>
+                    <i class="bi bi-person-circle text-muted" id="userIcon"></i>
+                </div>
+            </div>
+            <div class="logout-btn" id="logoutBtn">
+                <button class="btn btn-danger w-100" onclick="logout()">Logout</button>
+            </div>
+        </header>
+    </div>
+
+    <div class="row">
+        <main class="d-flex">
+            <aside class="col-md-4 col-lg-3">
+                <div class="sidebar d-none d-md-block">
+                    <ul class="nav flex-column">
+                        <li><a href="#"><i class="bi bi-person-fill"></i> Marwa Nasser</a></li>
+                        <li><a href="#"><i class="bi bi-people-fill"></i> Friends</a></li>
+                        <li><a href="#"><i class="bi bi-bookmark-fill"></i> Saved</a></li>
+                        <li><a href="#"><i class="bi bi-clock-fill"></i> Memories</a></li>
+                        <li><a href="#"><i class="bi bi-collection-fill"></i> Groups</a></li>
+                        <li><a href="#"><i class="bi bi-camera-video-fill"></i> Video</a></li>
+                        <li><a href="#"><i class="bi bi-newspaper"></i> Feeds</a></li>
+                        <li><a href="#"><i class="bi bi-calendar-event-fill"></i> Events</a></li>
+                        <li><a href="#"><i class="bi bi-three-dots"></i> See more</a></li>
+                    </ul>
+                    <hr>
+                    <h6>Your shortcuts</h6>
+                    <ul class="nav flex-column">
+                        <li><a href="#"><i class="bi bi-star-fill"></i> عتيق</a></li>
+                        <li><a href="#"><i class="bi bi-award-fill"></i> ITI scholarship</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="container-fluid col-sm-6 col-md-5 col-lg-6">
+                <div class="content">
+                    <div class="post-box">
+                        <input id="postInput" type="text" class="form-control mb-2" style="border: none;" placeholder="What's on your mind?">
+                        <div class="d-flex gap-1 flex-wrap flex-row">
+                            <button class="btn btn-light flex-grow-1"><i class="bi bi-camera-video-fill text-danger"></i> Live video</button>
+                            <button class="btn btn-light flex-grow-1"><i class="bi bi-image text-success"></i> Photo/video</button>
+                            <button class="btn btn-light flex-grow-1 d-none d-md-block"><i class="bi bi-emoji-smile text-warning"></i> Feeling/activity</button>
+                        </div>
+                    </div>
+
+                    <div class="story-container">
+                        <button class="btn btn-light position-absolute start-0 top-50 translate-middle-y d-md-none">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <div class="d-flex overflow-auto">
+                            <div class="story-box">Create story</div>
+                            <div class="story-box">Heba Gharib</div>
+                            <div class="story-box">Mayar Ehab</div>
+                            <div class="story-box">Dina Hamada</div>
+                            <div class="story-box">Near Han</div>
+                        </div>
+                        <button class="btn btn-light position-absolute end-0 top-50 translate-middle-y d-md-none">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div id="posts" class="mt-4"></div>
+                    <div id="pagination" class="d-flex justify-content-center mt-4"></div>
+                </div>
+            </section>
+
+            <aside class="col-md-4 col-lg-3">
+                <div class="sidebar nav flex-column post-box mt-10 d-none d-md-block">
+                    <h6>Contacts</h6>
+                    <ul class="list-unstyled">
+                        <li>Shadi Ahmed</li>
+                        <li>Marwa Nasser</li>
+                        <li>Aya Aboomer</li>
+                        <li>Mayar Alamin</li>
+                        <li>Heba Gharib</li>
+                        <li>Abeer Ahmed</li>
+                        <li>Manal Gamal</li>
+                        <li>Mohamed Nasser</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const itemsPerPage = 5;
+
+        async function fetchData(page) {
+            try {
+                const response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${itemsPerPage}`);
+                const data = await response.json();
+                displayData(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        function displayData(data) {
+            const container = document.getElementById('posts');
+            container.innerHTML = '';
+
+            data.forEach(item => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post-box', 'mb-3', 'p-3');
+                postElement.innerHTML = `
+                    <div class="post-header d-flex justify-content-between align-items-center">
+                        <strong>User ${item.userId}</strong>
+                        <div class="post-time text-muted">${new Date().toLocaleString()}</div>
+                    </div>
+                    <div class="post-content mt-2">${item.body}</div>
+                    <div class="post-footer d-flex gap-2 mt-3">
+                        <button class="btn btn-light flex-grow-1"><i class="bi bi-hand-thumbs-up"></i> Like</button>
+                        <button class="btn btn-light flex-grow-1"><i class="bi bi-chat"></i> Comment</button>
+                        <button class="btn btn-light flex-grow-1"><i class="bi bi-share"></i> Share</button>
+                    </div>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        function updatePagination() {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = `
+                <button class="btn btn-primary" onclick="prevPage()">Previous</button>
+                <span class="mx-2">Page ${currentPage}</span>
+                <button class="btn btn-primary" onclick="nextPage()">Next</button>
+            `;
+        }
+
+        function nextPage() {
+            currentPage++;
+            fetchData(currentPage);
+            updatePagination();
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                fetchData(currentPage);
+                updatePagination();
+            }
+        }
+
+        function logout() {
+            alert("You have been logged out.");
+            window.location.href = 'login.html';
+        }
+
+        document.getElementById('userIcon').addEventListener('click', function() {
+            const logoutBtn = document.getElementById('logoutBtn');
+            logoutBtn.style.display = logoutBtn.style.display === 'block' ? 'none' : 'block';
+        });
+
+        const storiesContainer = document.querySelector('.story-container .d-flex');
+        const leftArrow = document.querySelector('.story-container button:first-child');
+        const rightArrow = document.querySelector('.story-container button:last-child');
+
+        function updateArrowsVisibility() {
+            const scrollLeft = storiesContainer.scrollLeft;
+            const scrollWidth = storiesContainer.scrollWidth;
+            const clientWidth = storiesContainer.clientWidth;
+
+            if (scrollLeft === 0) {
+                leftArrow.style.display = 'none';
+            } else {
+                leftArrow.style.display = 'block';
+            }
+
+            if (scrollLeft + clientWidth >= scrollWidth) {
+                rightArrow.style.display = 'none';
+            } else {
+                rightArrow.style.display = 'block';
+            }
+        }
+
+        leftArrow.addEventListener('click', function() {
+            storiesContainer.scrollBy({ left: -100, behavior: 'smooth' });
+            setTimeout(updateArrowsVisibility, 300);
+        });
+
+        rightArrow.addEventListener('click', function() {
+            storiesContainer.scrollBy({ left: 100, behavior: 'smooth' });
+            setTimeout(updateArrowsVisibility, 300); 
+        });
+
+        storiesContainer.addEventListener('scroll', updateArrowsVisibility);
+
+        window.onload = () => {
+            fetchData(currentPage);
+            updatePagination();
+            updateArrowsVisibility(); 
+        };
+    </script>
+</body>
+
+</html>
