@@ -72,20 +72,26 @@
             card.remove();
         }
 
-        document.getElementById('login-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const user = JSON.parse(localStorage.getItem('user'));
-
-            if (!user || user.email !== email || user.password !== password) {
-                alert('Invalid email or password!');
-                return;
-            }
-
-            alert('Login successful!');
-            window.location.href = 'index.html';
-        });
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    
+    if (!storedUser) {
+        alert('There is no registered user! Please register first.');
+        return;
+    }
+    
+    if (storedUser.email !== email || storedUser.password !== password) {
+        alert('Incorrect email or password!');
+        return;
+    }
+    
+    alert('Login successfully!');
+    window.location.href = 'index.html';
+});
     </script>
 </body>
 </html>

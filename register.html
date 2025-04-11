@@ -1,40 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/Facebook_Logo_(2019).png.webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/Facebook_Logo_(2019).png.webp" />
     <title>Sign Up For Facebook</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        body { background-color: #f0f2f5; }
-        .signup-box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 400px; margin: auto; }
-        .facebook-logo { font-size: 2rem; font-weight: bold; color: #1877f2; text-align: center; }
-        .form-check-input:checked { font-weight: bold; color: #1877f2; }
-        .form-check .form-check-input { float: left !important; margin-left: 0.5em !important; }
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .signup-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .facebook-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1877f2;
+            text-align: center;
+        }
+
+        .form-check-input:checked {
+            font-weight: bold;
+            color: #1877f2;
+        }
+
+        .form-check .form-check-input {
+            float: left !important;
+            margin-left: 0.5em !important;
+        }
     </style>
 </head>
+
 <body>
     <div class="container d-flex flex-column align-items-center justify-content-center vh-90 mt-4">
         <div class="facebook-logo">facebook</div>
         <div class="signup-box mt-3">
             <h4 class="text-center fw-bold">Create a new account</h4>
             <p class="text-center text-muted">It's quick and easy.</p>
-            <hr>
+            <hr />
             <form id="signup-form" class="needs-validation" novalidate>
                 <div class="row">
                     <div class="col-6 mb-2">
-                        <input type="text" class="form-control" id="first-name" placeholder="First name" required>
+                        <input type="text" class="form-control" id="first-name" placeholder="First name" required />
                         <div class="invalid-feedback">
                             Please provide your first name.
                         </div>
                     </div>
                     <div class="col-6 mb-2">
-                        <input type="text" class="form-control" id="surname" placeholder="Surname" required>
-                        <div class="invalid-feedback">
-                            Please provide your surname.
-                        </div>
+                        <input type="text" class="form-control" id="surname" placeholder="Surname" required />
+                        <div class="invalid-feedback">Please provide your surname.</div>
                     </div>
                 </div>
                 <div class="mb-2">
@@ -58,38 +82,51 @@
                     <label class="form-label">Gender</label>
                     <div class="d-flex gap-2">
                         <div class="form-check border rounded p-2 w-100 d-flex align-items-center">
-                            <input class="form-check-input me-2" type="radio" name="gender" id="female" required>
+                            <input class="form-check-input me-2" type="radio" name="gender" id="female" required />
                             <label class="form-check-label" for="female">Female</label>
                         </div>
                         <div class="form-check border rounded p-2 w-100 d-flex align-items-center">
-                            <input class="form-check-input me-2" type="radio" name="gender" id="male" required>
+                            <input class="form-check-input me-2" type="radio" name="gender" id="male" required />
                             <label class="form-check-label" for="male">Male</label>
                         </div>
-                        <div class="invalid-feedback">
-                            Please select your gender.
-                        </div>
+                        <div class="invalid-feedback">Please select your gender.</div>
                     </div>
                 </div>
-                <input type="email" class="form-control mb-2" id="email" placeholder="Mobile number or email address" required>
+                <input type="email" class="form-control mb-2" id="email" placeholder="Mobile number or email address"
+                    required />
                 <div class="invalid-feedback">
                     Please provide a valid email or phone number.
                 </div>
-                <input type="password" class="form-control mb-2" id="password" placeholder="New password" required>
-                <div class="invalid-feedback">
-                    Please provide a valid password.
-                </div>
-                <p class="text-muted small">People who use our service may have uploaded your contact information to Facebook. <a href="https://www.facebook.com/help/637205020878504" target="_blank">Learn more</a></p>
-                <p class="text-muted small">By clicking Sign Up, you agree to our <a href="https://www.facebook.com/legal/terms/update" target="_blank">Terms</a>, <a href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0" target="_blank">Privacy Policy</a> and <a href="https://www.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0" target="_blank">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
+                <input type="password" class="form-control mb-2" id="password" placeholder="New password" required />
+                <div class="invalid-feedback">Please provide a valid password.</div>
+                <p class="text-muted small">
+                    People who use our service may have uploaded your contact
+                    information to Facebook.
+                    <a href="https://www.facebook.com/help/637205020878504" target="_blank">Learn more</a>
+                </p>
+                <p class="text-muted small">
+                    By clicking Sign Up, you agree to our
+                    <a href="https://www.facebook.com/legal/terms/update" target="_blank">Terms</a>,
+                    <a href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0"
+                        target="_blank">Privacy Policy</a>
+                    and
+                    <a href="https://www.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0"
+                        target="_blank">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at
+                    any
+                    time.
+                </p>
                 <button type="submit" class="btn btn-success w-100">Sign Up</button>
-                <p class="text-center mt-3"><a href="login.html" class="text-primary">Already have an account?</a></p>
+                <p class="text-center mt-3">
+                    <a href="login.html" class="text-primary">Already have an account?</a>
+                </p>
             </form>
         </div>
     </div>
     <script>
         function populateDays() {
-            const daySelect = document.getElementById('day');
+            const daySelect = document.getElementById("day");
             for (let i = 1; i <= 31; i++) {
-                const option = document.createElement('option');
+                const option = document.createElement("option");
                 option.value = i;
                 option.textContent = i;
                 daySelect.appendChild(option);
@@ -97,10 +134,23 @@
         }
 
         function populateMonths() {
-            const monthSelect = document.getElementById('month');
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const monthSelect = document.getElementById("month");
+            const months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ];
             months.forEach((month, index) => {
-                const option = document.createElement('option');
+                const option = document.createElement("option");
                 option.value = index + 1;
                 option.textContent = month;
                 monthSelect.appendChild(option);
@@ -108,10 +158,10 @@
         }
 
         function populateYears() {
-            const yearSelect = document.getElementById('year');
+            const yearSelect = document.getElementById("year");
             const currentYear = new Date().getFullYear();
             for (let i = currentYear; i >= 1900; i--) {
-                const option = document.createElement('option');
+                const option = document.createElement("option");
                 option.value = i;
                 option.textContent = i;
                 yearSelect.appendChild(option);
@@ -123,24 +173,28 @@
             const day = today.getDate();
             const month = today.getMonth() + 1;
             const year = today.getFullYear();
-            document.getElementById('day').value = day;
-            document.getElementById('month').value = month;
-            document.getElementById('year').value = year;
+            document.getElementById("day").value = day;
+            document.getElementById("month").value = month;
+            document.getElementById("year").value = year;
         }
 
         (function () {
-            'use strict';
+            "use strict";
 
-            const form = document.getElementById('signup-form');
+            const form = document.getElementById("signup-form");
 
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
+            form.addEventListener(
+                "submit",
+                function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
 
-                form.classList.add('was-validated');
-            }, false);
+                    form.classList.add("was-validated");
+                },
+                false
+            );
         })();
 
         window.onload = () => {
@@ -150,7 +204,38 @@
             setTodayDate();
         };
 
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    if (!this.checkValidity()) {
+        event.stopPropagation();
+        this.classList.add('was-validated');
+        return;
+    }
+    
+    const user = {
+        firstName: document.getElementById('first-name').value,
+        surname: document.getElementById('surname').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        day: document.getElementById('day').value,
+        month: document.getElementById('month').value,
+        year: document.getElementById('year').value,
+        gender: document.querySelector('input[name="gender"]:checked').value
+    };
+    
+    localStorage.setItem('user', JSON.stringify(user));
+    
+    alert('Registration successful! You will be redirected to the login page.');
+    
+    setTimeout(() => {
+        window.location.href = 'login.html';
+    }, 2000);
+    
+    this.classList.add('was-validated');
+});
         // window.location.href = 'index.html';
     </script>
 </body>
+
 </html>
